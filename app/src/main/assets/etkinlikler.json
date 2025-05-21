@@ -1,0 +1,22 @@
+{
+  "etkinlikler": {
+    "1": {
+      "baslik": "Çocuk Tiyatrosu",
+      "aciklama": "Renkli ve eğlenceli bir oyun.",
+      "resimUrl": "https://picsum.photos/200/300",
+      "kaynakUrl": "https://www.orneklink.com"
+    },
+    "2": {
+      "baslik": "Bilim Atölyesi",
+      "aciklama": "Deneylerle dolu bir gün seni bekliyor!",
+      "resimUrl": "https://picsum.photos/200/301",
+      "kaynakUrl": "https://www.bilimetkinligi.com"
+    },
+    "3": {
+      "baslik": "Masal Günü",
+      "aciklama": "Küçükler için masal anlatımı.",
+      "resimUrl": "https://picsum.photos/200/302",
+      "kaynakUrl": "https://www.masalgunu.org"
+    }
+  }
+}
