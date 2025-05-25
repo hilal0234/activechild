@@ -100,4 +100,25 @@ public class UserDatabaseHelper extends SQLiteOpenHelper {
         db.close();
         return isim;
     }
+    public boolean updateUser(String oldEmail, String newEmail, String newİsim, String newSoyisim) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_EMAIL, newEmail);
+        values.put(COLUMN_İsim, newİsim);
+        values.put(COLUMN_Soyisim, newSoyisim);
+
+        int rows = db.update(TABLE_NAME, values, COLUMN_EMAIL + " = ?", new String[]{oldEmail});
+        db.close();
+        return rows > 0;
+    }
+    public boolean updatePassword(String email, String newPassword) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(COLUMN_PASSWORD, newPassword);
+        int rows = db.update(TABLE_NAME, values, COLUMN_EMAIL + " = ?", new String[]{email});
+        db.close();
+        return rows > 0;
+    }
+
+
 }

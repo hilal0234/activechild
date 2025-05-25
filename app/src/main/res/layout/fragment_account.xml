@@ -1,12 +1,105 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hesabım"
-        android:textSize="24sp"
-        android:textStyle="bold" />
-</FrameLayout>
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <!-- Başlık -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hesabım"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Hesap Bilgileri -->
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ad Soyad:" />
+
+        <TextView
+            android:id="@+id/tvEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="E-posta:" />
+
+        <!-- Çocuk Bilgi Girişi -->
+        <EditText
+            android:id="@+id/etChildName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Çocuk Ad Soyad" />
+
+        <EditText
+            android:id="@+id/etChildAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Yaş"
+            android:inputType="number" />
+
+        <EditText
+            android:id="@+id/etChildGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Cinsiyet"
+            android:inputType="textCapWords" />
+
+        <EditText
+            android:id="@+id/etChildInterests"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="İlgi Alanları" />
+
+        <Button
+            android:id="@+id/btnSaveChild"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Kaydet"
+            android:layout_marginTop="12dp" />
+
+        <!-- Kaydedilen Bilgileri Göster -->
+        <TextView
+            android:id="@+id/tvChildInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:visibility="gone"
+            android:padding="12dp"
+            android:background="#F3F3F3"
+            android:textColor="#000000"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp" />
+
+        <!-- Diğer Butonlar -->
+        <Button
+            android:id="@+id/btnEditProfile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profili Düzenle"
+            android:layout_marginTop="32dp" />
+
+        <Button
+            android:id="@+id/btnChangePassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Şifre Değiştir"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Çıkış Yap"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#FF3B30"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+</ScrollView>

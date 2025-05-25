@@ -7,6 +7,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
+import android.content.Context;
+
+
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -48,11 +53,33 @@ public class LoginActivity extends AppCompatActivity {
 
             if (userExists) {
                 Toast.makeText(this, "Giriş başarılı!", Toast.LENGTH_SHORT).show();
+
+                // Kullanıcı adını DB'den çek
+                String isim = dbHelper.getUserNameByEmail(email);
+
+                // SharedPreferences'e kayıt et
+                // Her kullanıcı için kişisel prefs
+                SharedPreferences prefs = getSharedPreferences("UserPrefs_" + email, MODE_PRIVATE);
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putString("name", isim);
+                editor.putString("email", email);
+                editor.putString("activeUserEmail", email); // aktif kullanıcıyı da belirt
+                editor.apply();
+
+// Genel "aktif kullanıcı"yı ayrı bir yerde sakla
+                SharedPreferences globalPrefs = getSharedPreferences("UserPrefs", MODE_PRIVATE);
+                SharedPreferences.Editor globalEditor = globalPrefs.edit();
+                globalEditor.putString("activeUserEmail", email);
+                globalEditor.apply();
+
+
                 Intent intent = new Intent(LoginActivity.this, Homepage.class);
                 intent.putExtra("email", email);
                 startActivity(intent);
                 finish();
-            } else {
+            }
+
+         else {
                 Toast.makeText(this, "Geçersiz email veya şifre", Toast.LENGTH_SHORT).show();
             }
         });

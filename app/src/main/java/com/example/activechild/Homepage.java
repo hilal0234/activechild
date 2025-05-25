@@ -1,15 +1,17 @@
 package com.example.activechild;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class Homepage extends AppCompatActivity {
 
@@ -26,6 +28,16 @@ public class Homepage extends AppCompatActivity {
 
         Intent intent = getIntent();
         String email = intent.getStringExtra("email");
+
+        // 🔐 Giriş yapan kullanıcının email'ini kaydet (çocuk bilgileri için gerekli)
+        if (email != null) {
+            SharedPreferences prefs = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = prefs.edit();
+            editor.putString("activeUserEmail", email);
+            editor.apply();
+        }
+
+        // Kullanıcının adı gösteriliyor
         String isim = dbHelper.getUserNameByEmail(email);
         welcomeText.setText("Merhaba " + isim);
 
@@ -35,9 +47,9 @@ public class Homepage extends AppCompatActivity {
         loadFragment(new HomeFragment());
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            int itemId = item.getItemId();
             Fragment selectedFragment = null;
 
+            int itemId = item.getItemId();
             if (itemId == R.id.nav_home) {
                 selectedFragment = new HomeFragment();
             } else if (itemId == R.id.nav_events) {

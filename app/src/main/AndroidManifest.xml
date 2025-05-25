@@ -29,6 +29,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".Homepage" />
+        <activity android:name=".EditProfileActivity" />
+        <activity android:name=".ChangePasswordActivity" />
+
 
     </application>
 
