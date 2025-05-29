@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -36,6 +37,7 @@ public class EtkinlikAdapter extends RecyclerView.Adapter<EtkinlikAdapter.ViewHo
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Etkinlik etkinlik = etkinlikList.get(position);
+
         holder.txtBaslik.setText(etkinlik.getBaslik());
         holder.txtAciklama.setText(etkinlik.getAciklama());
 
@@ -43,7 +45,7 @@ public class EtkinlikAdapter extends RecyclerView.Adapter<EtkinlikAdapter.ViewHo
                 .load(etkinlik.getResimUrl())
                 .into(holder.imgEtkinlik);
 
-        holder.itemView.setOnClickListener(v -> {
+        holder.btnEtkinlik.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(etkinlik.getKaynakUrl()));
             context.startActivity(intent);
         });
@@ -57,12 +59,14 @@ public class EtkinlikAdapter extends RecyclerView.Adapter<EtkinlikAdapter.ViewHo
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtBaslik, txtAciklama;
         ImageView imgEtkinlik;
+        Button btnEtkinlik;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             txtBaslik = itemView.findViewById(R.id.txtBaslik);
             txtAciklama = itemView.findViewById(R.id.txtAciklama);
             imgEtkinlik = itemView.findViewById(R.id.imgEtkinlik);
+            btnEtkinlik = itemView.findViewById(R.id.etkinliklerButton);
         }
     }
 }
