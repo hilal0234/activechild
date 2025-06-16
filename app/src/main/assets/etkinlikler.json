@@ -1,22 +1,29 @@
 {
   "etkinlikler": {
     "1": {
-      "baslik": "Çocuk Tiyatrosu",
-      "aciklama": "Renkli ve eğlenceli bir oyun.",
-      "resimUrl": "https://picsum.photos/200/300",
-      "kaynakUrl": "https://www.orneklink.com"
+      "baslik": "Çocuk Çikolata Atölyesi",
+      "aciklama": "Kahve Dünyası Çikolata Atölyesi Minik Şefleri Bekliyor",
+      "resimUrl": "https://www.biletix.com/static/images/live/event/eventimages/wide/kahvecocukwide.png",
+      "kaynakUrl": "https://www.biletix.com/etkinlik/4CT32/ISTANBUL/tr"
     },
     "2": {
-      "baslik": "Bilim Atölyesi",
-      "aciklama": "Deneylerle dolu bir gün seni bekliyor!",
-      "resimUrl": "https://picsum.photos/200/301",
-      "kaynakUrl": "https://www.bilimetkinligi.com"
+      "baslik": "Ha Cesaret",
+      "aciklama": "Altı yaş ve üzeri için düşünülmüş bir çocuk oyunu",
+      "resimUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUOuz0LcgMTyETqBmXK6EAToxd3TqEjCZQTA&s",
+      "kaynakUrl": "https://mobilet.com/tr/event/ha-cesaret-43385/"
     },
     "3": {
-      "baslik": "Masal Günü",
-      "aciklama": "Küçükler için masal anlatımı.",
-      "resimUrl": "https://picsum.photos/200/302",
-      "kaynakUrl": "https://www.masalgunu.org"
+      "baslik": "Merhaba Gölgem",
+      "aciklama": "Müzikli çocuk oyunu.",
+      "resimUrl": "https://www.biletix.com/static/images/live/event/eventimages/merhabagolgemm42S21.jpg",
+      "kaynakUrl": "https://www.biletix.com/etkinlik/42S21/ISTANBUL/tr"
+    },
+    "test": {
+      "baslik": "Test Etkinlik",
+      "aciklama": "Bu bir deneme etkinliğidir.",
+      "resimUrl": "https://i.imgur.com/3kL4fBP.jpeg",
+      "kaynakUrl": "https://www.biletix.com/"
     }
+
   }
 }
