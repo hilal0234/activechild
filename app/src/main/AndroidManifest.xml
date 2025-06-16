@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.activechild">
 
     <application
         android:allowBackup="true"
@@ -19,6 +20,9 @@
         <!-- Kayıt Ekranı -->
         <activity android:name=".RegisterActivity" />
 
+        <!-- Blog Detay Sayfası -->
+        <activity android:name=".BlogDetailActivity" />
+
         <!-- Ana ekran (uygulama ilk açıldığında çalışacak olan ekran) -->
         <activity
             android:name=".MainActivity"
@@ -28,6 +32,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Diğer ekranlar -->
         <activity android:name=".Homepage" />
         <activity android:name=".EditProfileActivity" />
         <activity android:name=".ChangePasswordActivity" />
